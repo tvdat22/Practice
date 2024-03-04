@@ -43,6 +43,9 @@
             this.dgvClass = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.txtStdId = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbStd = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnDelStd = new System.Windows.Forms.Button();
             this.btnEditStd = new System.Windows.Forms.Button();
@@ -55,9 +58,6 @@
             this.txtStudentName = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvStudent = new System.Windows.Forms.DataGridView();
-            this.cbStd = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtStdId = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -228,6 +228,31 @@
             this.panel4.Size = new System.Drawing.Size(786, 179);
             this.panel4.TabIndex = 1;
             // 
+            // txtStdId
+            // 
+            this.txtStdId.Location = new System.Drawing.Point(396, 117);
+            this.txtStdId.Name = "txtStdId";
+            this.txtStdId.ReadOnly = true;
+            this.txtStdId.Size = new System.Drawing.Size(99, 22);
+            this.txtStdId.TabIndex = 13;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(312, 125);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 16);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Mã học sinh";
+            // 
+            // cbStd
+            // 
+            this.cbStd.FormattingEnabled = true;
+            this.cbStd.Location = new System.Drawing.Point(165, 117);
+            this.cbStd.Name = "cbStd";
+            this.cbStd.Size = new System.Drawing.Size(121, 24);
+            this.cbStd.TabIndex = 11;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -337,31 +362,6 @@
             this.dgvStudent.TabIndex = 0;
             this.dgvStudent.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudent_CellContentClick);
             // 
-            // cbStd
-            // 
-            this.cbStd.FormattingEnabled = true;
-            this.cbStd.Location = new System.Drawing.Point(165, 117);
-            this.cbStd.Name = "cbStd";
-            this.cbStd.Size = new System.Drawing.Size(121, 24);
-            this.cbStd.TabIndex = 11;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(312, 125);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 16);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Mã học sinh";
-            // 
-            // txtStdId
-            // 
-            this.txtStdId.Location = new System.Drawing.Point(396, 117);
-            this.txtStdId.Name = "txtStdId";
-            this.txtStdId.ReadOnly = true;
-            this.txtStdId.Size = new System.Drawing.Size(99, 22);
-            this.txtStdId.TabIndex = 13;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -369,7 +369,8 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Quản lý lớp học";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

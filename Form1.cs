@@ -21,6 +21,10 @@ namespace Practice
         DataTable table = new DataTable();
         DataTable table2 = new DataTable();
 
+        public Form1()
+        {
+            InitializeComponent();
+        }
 
         void loaddataClass()
         {
@@ -47,18 +51,6 @@ namespace Practice
 
         }
 
-        public Form1()
-        {
-            InitializeComponent();
-        }
-
-        private void btnAddClass_Click(object sender, EventArgs e)
-        {
-            command = connection.CreateCommand();
-            command.CommandText = "INSERT INTO class values('"+txtGrade.Text+"', '"+txtClass.Text+"')";
-            command.ExecuteNonQuery();
-            loaddataClass();
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -67,6 +59,7 @@ namespace Practice
             loaddataClass();
             loaddataStd();
         }
+
 
         private void dgvClass_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -90,6 +83,22 @@ namespace Practice
 
         }
 
+        private void btnAddClass_Click(object sender, EventArgs e)
+        {
+            command = connection.CreateCommand();
+            command.CommandText = "INSERT INTO class values('" + txtGrade.Text + "', '" + txtClass.Text + "')";
+            command.ExecuteNonQuery();
+            loaddataClass();
+        }
+
+        private void btnEditClass_Click(object sender, EventArgs e)
+        {
+            command = connection.CreateCommand();
+            command.CommandText = "UPDATE class set ClassName ='" + txtClass.Text + "', GradeName = '" + txtGrade.Text + "' where ClassId = '" + txtClassID.Text + "'";
+            command.ExecuteNonQuery();
+            loaddataClass();
+        }
+
         private void btnAddStd_Click(object sender, EventArgs e)
         {
             command = connection.CreateCommand();
@@ -98,14 +107,7 @@ namespace Practice
             loaddataStd();
         }
 
-        private void btnEditClass_Click(object sender, EventArgs e)
-        {
-            command = connection.CreateCommand();
-            command.CommandText = "UPDATE class set ClassName ='"+txtClass.Text+"', GradeName = '"+txtGrade.Text+"' where ClassId = '"+txtClassID.Text+"'";
-            command.ExecuteNonQuery();
-            loaddataClass();
-        }
-
+        
         private void btnEditStd_Click(object sender, EventArgs e)
         {
             command = connection.CreateCommand();
