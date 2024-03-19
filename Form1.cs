@@ -12,8 +12,11 @@ using System.Drawing.Imaging;
 
 namespace Practice
 {
+
     public partial class Form1 : Form
     {
+        public bool isExit = true;
+
         SqlConnection connection;
         SqlCommand command;
         string str = "Data Source=TVDat;Initial Catalog=QlyLopHoc;Integrated Security=True";
@@ -122,6 +125,20 @@ namespace Practice
             command.CommandText = "DELETE FROM student where StudentID = '"+ txtStdId.Text + "'";
             command.ExecuteNonQuery();
             loaddataStd();
+        }
+
+
+        public event EventHandler LogOut;
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LogOut(this, new EventArgs());
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if(isExit)
+                Application.Exit();
         }
     }
 }
